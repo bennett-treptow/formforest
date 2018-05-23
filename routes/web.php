@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ClientController@index');
+Route::get('/form' ,'ClientController@form');
+Route::post('/form', 'ClientController@submit');
+Route::view('/error', 'welcome');
