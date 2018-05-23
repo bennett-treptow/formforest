@@ -10,10 +10,10 @@ class DomainRouting {
         $host = $request->getHost();
         //you would put this domain into your .env
         //but for brevity, I will just assume the domain
-        //e.g. config('app.parent_domain') == 'formdaddy.com'
+        //e.g. config('app.parent_domain') == 'formforest.com'
 
         if(str_contains($host, 'formforest.com')){
-            //cool, it's a subdomain of formdaddy.com
+            //cool, it's a subdomain of formforest.com
             //so, let's stick the client into the service container
             $slug = explode('.formforest.com', $host)[0];
             $client = Client::where('slug', $slug)->get();
